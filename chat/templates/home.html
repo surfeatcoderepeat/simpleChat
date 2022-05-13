@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>simpleChat</title>
+        {% load static %}
+
+        <link rel="stylesheet" type="text/css" href="{% static '/style.css' %}">
+    </head>
+    <body>
+        <header class="main">
+                <h1 class="title">Welcome to simpleChat</h1>
+        </header>
+        <div class="home-form">
+            <form action="checkview" method="POST">
+                {% csrf_token %}
+                <img class="logo centered"  src="{% static '/logo_mare.png' %}" alt="logo">
+                <input class="centered" placeholder="create o join a room" autocomplete="off" type="text" name="roomName" id="roomName">
+                <input class="centered" placeholder="put your name in here" autocomplete="off" type="text" name="name" id="name">
+                <button class="btn" type="submit">enter room</button>
+            </form>
+        </div>
+    </body>
+</html>
